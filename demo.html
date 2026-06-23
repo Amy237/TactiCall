@@ -63,19 +63,15 @@
   }
   .media-placeholder p{ font-size:14.5px; opacity:0.65; max-width:340px; margin:0 auto; }
 
-  .pdf-frame{ width:100%; height:640px; background:var(--surface); }
-  .pdf-placeholder{
-    width:100%; min-height:360px; background:var(--yellow);
-    display:flex; align-items:center; justify-content:center; text-align:center; padding:32px;
-  }
-  .pdf-placeholder .icon{ font-size:32px; margin-bottom:10px; }
-  .pdf-placeholder p{ font-size:14.5px; opacity:0.7; max-width:380px; margin:8px auto 0; }
-
-  code{ background:rgba(21,17,12,0.08); padding:2px 7px; font-family:monospace; font-size:13px; }
+  .paper-citation{ margin-bottom:20px; }
+  .paper-citation strong{ font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; display:block; margin-bottom:6px; }
+  .paper-citation .byline{ font-size:13.5px; opacity:0.65; margin:0; }
+  .abstract-box{ background:var(--blue); padding:22px 24px; margin-bottom:22px; }
+  .abstract-label{ font-family:'Archivo',sans-serif; font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em; opacity:0.7; display:block; margin-bottom:8px; }
+  .abstract-box p{ font-size:15px; line-height:1.7; margin:0; }
+  .paper-actions{ display:flex; gap:14px; flex-wrap:wrap; }
 
   footer{ background:var(--surface); padding:40px 28px 36px; text-align:center; font-style:italic; opacity:0.65; font-size:14px; }
-
-  @media (max-width:700px){ .pdf-frame, .pdf-placeholder{ height:auto; } }
 </style>
 </head>
 <body>
@@ -96,7 +92,7 @@
 <div class="page-head">
   <span class="tag">See it in action</span>
   <h1>The <span class="hl">demo</span> page.</h1>
-  <p>A working spot for your pitch video and deck. Both slots below are placeholders right now, swap in your own links and they'll just work.</p>
+  <p>A working spot for your pitch video and the published research. The video slot below is still a placeholder, swap in your own link and it'll just work.</p>
 </div>
 
 <div class="demo-block">
@@ -121,22 +117,22 @@
   </div>
 
   <div class="demo-card">
-    <h2>Read the deck</h2>
-    <div class="sub">Upload a PDF next to this file in your repo, then point the embed at it.</div>
-    <!--
-      TO ADD YOUR PDF:
-      1. Upload your PDF into the same GitHub folder as this page, e.g. "deck.pdf"
-      2. Replace the div below with:
-         <embed src="deck.pdf" type="application/pdf" class="pdf-frame">
-      A direct download link is good to keep too, in case the embed doesn't render on someone's phone:
-         <a href="deck.pdf" class="btn ghost">Download the PDF ↓</a>
-    -->
-    <div class="pdf-placeholder">
-      <div>
-        <div class="icon">📄</div>
-        <strong>Pitch deck goes here</strong>
-        <p>Upload a PDF to this repo (e.g. <code>deck.pdf</code>) and swap in an <code>&lt;embed&gt;</code> tag to show it inline.</p>
-      </div>
+    <h2>Read the paper</h2>
+    <div class="sub">Peer-reviewed and presented at the International Conference on Social Robotics + AI, 2025.</div>
+
+    <div class="paper-citation">
+      <strong>TactiCall: ML-Powered Haptic Wristband for Alerting Hearing-Impaired Users</strong>
+      <p class="byline">Niu, H., Akhond, S., &amp; Samani, H. &middot; Lecture Notes in Computer Science (LNAI), Springer Nature &middot; ICSR+AI 2025</p>
+    </div>
+
+    <div class="abstract-box">
+      <span class="abstract-label">Abstract</span>
+      <p>This paper presents TactiCall, a self-contained wristband designed to enable users with hearing difficulties to &ldquo;feel&rdquo; their environment. First, the unmet need for unsignaled alerts among hearing-impaired adults living alone is characterized. Next, a few-shot learning pipeline for four common household sounds is implemented on a smartphone, and the hardware and firmware design of the haptic wristband are detailed. Finally, a pilot study is reported in which hearing-intact participants identified vibration patterns with an accuracy of 96.9 percent, demonstrating TactiCall's potential as an intuitive and easy-to-set-up assistive device.</p>
+    </div>
+
+    <div class="paper-actions">
+      <a href="https://link.springer.com/chapter/10.1007/978-981-95-2382-5_47" class="btn" target="_blank" rel="noopener">Read on Springer ↗</a>
+      <a href="mailto:haofei.niu@arts.ac.uk?subject=TactiCall%20paper%20request" class="btn ghost">Email me for the full PDF →</a>
     </div>
   </div>
 
