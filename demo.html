@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TactiCall: Demo</title>
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --surface:#FFF4DF; --ink:#15110C;
+    --blue:#A8D3FF; --yellow:#FFF546; --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Lora',serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:'Archivo',sans-serif; font-weight:800; line-height:1.08; margin:0; letter-spacing:-0.01em; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+  .hl{ background-image:linear-gradient(transparent 62%, var(--yellow) 62%); padding:0 2px; }
+
+  .nav{
+    position:sticky; top:0; z-index:50; background:rgba(255,244,223,0.7);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); box-shadow:0 2px 14px rgba(21,17,12,0.06);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:var(--max); margin:0 auto; }
+  .logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo img{ width:36px; height:auto; }
+  .logo span{ font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; }
+  .nav-links{ display:flex; align-items:center; gap:24px; font-family:'Archivo',sans-serif; font-size:14.5px; font-weight:600; }
+  .nav-links a{ text-decoration:none; opacity:0.75; }
+  .nav-links a:hover{ opacity:1; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+    padding:11px 22px; border:none; cursor:pointer; text-decoration:none;
+    background:var(--ink); color:var(--surface); transition:box-shadow .15s ease, transform .15s ease;
+  }
+  .btn:hover{ box-shadow:0 8px 18px rgba(21,17,12,0.22); transform:translateY(-2px); }
+  .btn.ghost{ background:transparent; color:var(--ink); text-decoration:underline; text-decoration-thickness:2px; }
+  .btn.ghost:hover{ box-shadow:none; transform:none; opacity:0.65; }
+
+  .page-head{ padding:64px 28px 24px; max-width:var(--max); margin:0 auto; }
+  .page-head .tag{ font-style:italic; font-size:14px; opacity:0.65; display:block; margin-bottom:10px; }
+  .page-head h1{ font-size:clamp(32px,5vw,48px); margin-bottom:14px; }
+  .page-head p{ font-size:16.5px; opacity:0.78; line-height:1.65; max-width:600px; }
+
+  .demo-block{ padding:24px 28px 64px; max-width:var(--max); margin:0 auto; }
+  .demo-card{ background:var(--surface); padding:32px; margin-bottom:40px; }
+  .demo-card h2{ font-size:24px; margin-bottom:8px; }
+  .demo-card .sub{ font-size:14.5px; opacity:0.7; margin-bottom:22px; }
+
+  .media-frame{
+    aspect-ratio:16/9; width:100%; background:var(--blue);
+    display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;
+  }
+  .media-frame iframe{ width:100%; height:100%; border:0; display:block; }
+  .media-placeholder{ text-align:center; padding:24px; }
+  .media-placeholder .play{
+    width:60px; height:60px; background:var(--yellow);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 14px; font-size:20px;
+  }
+  .media-placeholder p{ font-size:14.5px; opacity:0.65; max-width:340px; margin:0 auto; }
+
+  .pdf-frame{ width:100%; height:640px; background:var(--surface); }
+  .pdf-placeholder{
+    width:100%; min-height:360px; background:var(--yellow);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:32px;
+  }
+  .pdf-placeholder .icon{ font-size:32px; margin-bottom:10px; }
+  .pdf-placeholder p{ font-size:14.5px; opacity:0.7; max-width:380px; margin:8px auto 0; }
+
+  code{ background:rgba(21,17,12,0.08); padding:2px 7px; font-family:monospace; font-size:13px; }
+
+  footer{ background:var(--surface); padding:40px 28px 36px; text-align:center; font-style:italic; opacity:0.65; font-size:14px; }
+
+  @media (max-width:700px){ .pdf-frame, .pdf-placeholder{ height:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="icon.png" alt="TactiCall mascot">
+      <span>tacticall</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#waitlist">Join the list</a>
+      <a href="index.html" class="btn ghost">← Back home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <span class="tag">See it in action</span>
+  <h1>The <span class="hl">demo</span> page.</h1>
+  <p>A working spot for your pitch video and deck. Both slots below are placeholders right now, swap in your own links and they'll just work.</p>
+</div>
+
+<div class="demo-block">
+
+  <div class="demo-card">
+    <h2>Watch the demo</h2>
+    <div class="sub">Paste your YouTube embed link in to replace this placeholder.</div>
+    <div class="media-frame">
+      <!--
+        TO ADD YOUR VIDEO:
+        1. Get your YouTube share link, e.g. https://youtu.be/VIDEO_ID
+        2. Replace the div below with:
+           <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="TactiCall demo"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             allowfullscreen></iframe>
+      -->
+      <div class="media-placeholder">
+        <div class="play">▶</div>
+        <p>Demo video goes here. Drop in a YouTube embed link to fill this space.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <h2>Read the deck</h2>
+    <div class="sub">Upload a PDF next to this file in your repo, then point the embed at it.</div>
+    <!--
+      TO ADD YOUR PDF:
+      1. Upload your PDF into the same GitHub folder as this page, e.g. "deck.pdf"
+      2. Replace the div below with:
+         <embed src="deck.pdf" type="application/pdf" class="pdf-frame">
+      A direct download link is good to keep too, in case the embed doesn't render on someone's phone:
+         <a href="deck.pdf" class="btn ghost">Download the PDF ↓</a>
+    -->
+    <div class="pdf-placeholder">
+      <div>
+        <div class="icon">📄</div>
+        <strong>Pitch deck goes here</strong>
+        <p>Upload a PDF to this repo (e.g. <code>deck.pdf</code>) and swap in an <code>&lt;embed&gt;</code> tag to show it inline.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>This page is a scaffold, not a finished room. Fill it in whenever you're ready.</footer>
+
+</body>
+</html>
